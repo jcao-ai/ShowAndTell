@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
    
     let showAndTell = ShowAndTell()
-    var currentImage: UIImage = UIImage(named: "COCO_train2014_000000005335.jpg")! {
+    var currentImage: UIImage = UIImage(named: "COCO_train2014_000000005340.jpg")! {
         didSet {
             self.imageView.image = currentImage
         }
