@@ -88,8 +88,11 @@ beamSize | Time (ms)
 12 | 13777.67
 </td></tr> </table>
 
-### Line chart for Time vs Beam Size (When `maxWordNumber = 30`)
 <img src="https://github.com/LitleCarl/ShowAndTell/blob/master/DemoImages/chart_of_beam_size" >
+
+Line chart for Time vs Beam Size (When `maxWordNumber = 30`)
+
+So it is recommeneded to set `beamSize=1` on mobile devices due to less gpu/cpu time usage for saving battery life.  
 
 ## Original Model
 This coreml model is exported from keras which is trained with MSCOCO dataset for about 40k epoches. And presently it is not in the state of art yet. You may not use this in production.
