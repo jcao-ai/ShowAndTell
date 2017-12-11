@@ -50,7 +50,7 @@ class ShowAndTell {
 }
 ```
 
-## Benchmark (Tested on iPhone 7+, welcome pr for more decices)
+## Benchmark (Tested on iPhone 7+, welcome PR for more devices)
 <table>
 <tr><th>maxWordNumber = 20 </th><th>maxWordNumber = 30</th></tr>
 <tr><td>
