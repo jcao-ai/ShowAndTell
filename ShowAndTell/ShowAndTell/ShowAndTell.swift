@@ -28,7 +28,9 @@ class ShowAndTell {
         }
     }
     
-    // 预测完整结果
+    //    image:         The image to be used to generate the caption.
+    //    beamSize:      Max caption count in result to be reserved in beam search.(Affect the performance greatly)
+    //    maxWordNumber: Max number of words in a sentence to be predicted.
     func predict(image: UIImage, beamSize: Int = 3, maxWordNumber:Int = 20) -> PriorityQueue<Caption> {
         let img = image.pixelBuffer(width: 299, height: 299)!
         // 获取图像感知状态
