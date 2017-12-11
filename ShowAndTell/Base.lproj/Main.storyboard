@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="COCO_train2014_000000005340.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FMV-xq-T36">
+                                <rect key="frame" x="67" y="104" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="hdu-FY-g5a"/>
+                                    <constraint firstAttribute="width" constant="240" id="oYp-IN-wOZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-he-jAt">
+                                <rect key="frame" x="135.5" y="364" width="104" height="30"/>
+                                <state key="normal" title="Click to predict"/>
+                                <connections>
+                                    <action selector="predict" destination="BYZ-38-t0r" eventType="touchUpInside" id="soA-WW-DYx"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V7M-dp-7WD">
+                                <rect key="frame" x="37" y="443" width="300" height="224"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9j-da-mHy">
+                                <rect key="frame" x="89" y="74" width="76" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Take photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGd-Bq-M4R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcU-Bv-sUF">
+                                <rect key="frame" x="179" y="79" width="16" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWj-xz-cFL">
+                                <rect key="frame" x="209" y="74" width="84" height="30"/>
+                                <state key="normal" title="Next picture"/>
+                                <connections>
+                                    <action selector="switchImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Zt-ux-3d6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FMV-xq-T36" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5xG-QG-ER0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V7M-dp-7WD" secondAttribute="bottom" id="6Fg-tK-0HU"/>
+                            <constraint firstItem="FMV-xq-T36" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-120" id="DBN-76-WBn"/>
+                            <constraint firstItem="WcU-Bv-sUF" firstAttribute="centerX" secondItem="FMV-xq-T36" secondAttribute="centerX" id="KXU-gR-jmq"/>
+                            <constraint firstItem="WcU-Bv-sUF" firstAttribute="bottom" secondItem="FMV-xq-T36" secondAttribute="top" constant="-4" id="Vng-nT-OgR"/>
+                            <constraint firstItem="fO5-he-jAt" firstAttribute="centerX" secondItem="V7M-dp-7WD" secondAttribute="centerX" id="WWL-L0-vh3"/>
+                            <constraint firstItem="V7M-dp-7WD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Yr4-4I-0dR"/>
+                            <constraint firstItem="eWj-xz-cFL" firstAttribute="leading" secondItem="WcU-Bv-sUF" secondAttribute="trailing" constant="14" id="aYu-kT-iD2"/>
+                            <constraint firstItem="V7M-dp-7WD" firstAttribute="top" secondItem="fO5-he-jAt" secondAttribute="bottom" constant="49" id="eHa-a6-CCd"/>
+                            <constraint firstItem="C9j-da-mHy" firstAttribute="bottom" secondItem="FMV-xq-T36" secondAttribute="top" id="iWj-iM-5WR"/>
+                            <constraint firstItem="V7M-dp-7WD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="ljP-c0-gsf"/>
+                            <constraint firstItem="fO5-he-jAt" firstAttribute="top" secondItem="FMV-xq-T36" secondAttribute="bottom" constant="20" id="tdh-0T-Zvm"/>
+                            <constraint firstItem="eWj-xz-cFL" firstAttribute="bottom" secondItem="FMV-xq-T36" secondAttribute="top" id="too-uL-W2G"/>
+                            <constraint firstItem="WcU-Bv-sUF" firstAttribute="leading" secondItem="C9j-da-mHy" secondAttribute="trailing" constant="14" id="usi-Gy-EhX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="FMV-xq-T36" id="zLV-Oy-ShX"/>
+                        <outlet property="textView" destination="V7M-dp-7WD" id="CX5-eS-GzI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="COCO_train2014_000000005340.jpg" width="640" height="480"/>
+    </resources>
+</document>
