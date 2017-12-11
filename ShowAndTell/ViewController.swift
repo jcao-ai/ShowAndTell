@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     @IBAction func predict() {
         textView.text = nil
         let startTime = Date()
-        let results = showAndTell.predict(image: self.currentImage, beamSize: 7, maxWordNumber: 30)
+        let results = showAndTell.predict(image: self.currentImage, beamSize: 3, maxWordNumber: 30)
         GSMessage.showMessageAddedTo("Time elapsed：\(Date().timeIntervalSince(startTime) * 1000)ms", type: .info, options: nil, inView: self.view, inViewController: self)
         textView.text = results.sorted(by: {$0.score > $1.score}).map({
             var x = $0.readAbleSentence.suffix($0.readAbleSentence.count - 1)
