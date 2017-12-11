@@ -105,6 +105,7 @@ I trained the dataset with only one GTX Force 1080Ti for about 48 hours and curr
 ## TODO 
 - Train on the dataset to 100k epoches. (currently 40k)
 - Open source origin model based on Keras which is trained with.
+- More language support (Chinese).
 
 ## Thanks for third party lib in demo
 - [GSMessages](https://github.com/wxxsw/GSMessages)
