@@ -1,0 +1,12 @@
+PODS:
+  - Fritz (1.0.0-beta5)
+
+DEPENDENCIES:
+  - Fritz (~> 1.0.0-beta)
+
+SPEC CHECKSUMS:
+  Fritz: a3bf484ce949e36748f1b365049be9e5b21a91c9
+
+PODFILE CHECKSUM: fe90b7a071b4ffc8cfd927f7d1983c0ddb7e66e3
+
+COCOAPODS: 1.4.0

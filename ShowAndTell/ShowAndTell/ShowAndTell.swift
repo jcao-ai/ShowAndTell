@@ -11,8 +11,8 @@ import UIKit
 import CoreML
 
 // Initialize CoreML models once
-let inception = keras_inception_lstm_good()
-let inceptionWOLabel = keras_inception_step_good_without_label()
+let inception = keras_inception_lstm_good().fritz()
+let inceptionWOLabel = keras_inception_step_good_without_label().fritz()
 
 class ShowAndTell {
     let wordDict: [String]
