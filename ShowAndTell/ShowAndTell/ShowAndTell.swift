@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import CoreML
 
+// Initialize CoreML models once
+let inception = keras_inception_lstm_good().fritz()
+let inceptionWOLabel = keras_inception_step_good_without_label().fritz()
+
 class ShowAndTell {
     let wordDict: [String]
     required init() {
@@ -34,7 +38,7 @@ class ShowAndTell {
     func predict(image: UIImage, beamSize: Int = 3, maxWordNumber:Int = 20) -> PriorityQueue<Caption> {
         let img = image.pixelBuffer(width: 299, height: 299)!
         // 获取图像感知状态
-        let result = try! keras_inception_lstm_good().prediction(image: img, lstm_1_h_in: nil, lstm_1_c_in: nil)
+        let result = try! inception.prediction(image: img, lstm_1_h_in: nil, lstm_1_c_in: nil)
         
         let initialCaption = Caption(state: (result.lstm_1_h_out, result.lstm_1_c_out))
         
@@ -118,7 +122,7 @@ class Caption: Comparable {
     }
     
     func nextStepWith(beamSize: Int, vocabDict: [String]) -> [Caption] {
-        let result = try! keras_inception_step_good_without_label().prediction(input1: self.lastWordMatrix(), lstm_1_h_in: self.state.0, lstm_1_c_in: self.state.1)
+        let result = try! inceptionWOLabel.prediction(input1: self.lastWordMatrix(), lstm_1_h_in: self.state.0, lstm_1_c_in: self.state.1)
         
         let topK = PriorityQueue<Word>(maxLength: beamSize, compare: {$0 > $1})
         
