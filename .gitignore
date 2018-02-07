@@ -64,3 +64,6 @@ fastlane/report.xml
 fastlane/screenshots
 
 .DS_Store
+
+# Keras h5 weight file
+*.h5
