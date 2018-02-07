@@ -7,7 +7,7 @@
 </p>
 
 # Show and Tell: A Neural Image Caption Generator 
-### 🎉🎉🎉 Keras part is public now
+> 🎉🎉🎉 Keras part is public now
 ## Brief
 
 ***Pull requests and issues:*** 
