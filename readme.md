@@ -94,17 +94,41 @@ Line chart for Time vs Beam Size (When `maxWordNumber = 30`)
 
 So it is recommeneded to set `beamSize=1` on mobile devices due to less gpu/cpu time usage for saving battery life.  
 
-## Original Model
-This coreml model is exported from keras which is trained with MSCOCO dataset for about 40k epoches. And presently it is not in the state of art yet. You may not use this in production.
-I trained the dataset with only one GTX Force 1080Ti for about 48 hours and currently don't have more time to train on it.Hope for community to keep on it.
-
 ## Requirements
 - iOS 11.0+
 - Xcode 9.0+ (Swift 4.x)
 
+## Original Model
+This coreml model is exported from keras which is trained with MSCOCO dataset for about 40k epoches. And presently it is not in the state of art yet. You may not use this in production.
+I trained the dataset with only one GTX Force 1080Ti for about 48 hours and currently don't have more time to train on it.Hope for community to keep on it.
+
+
+## Keras part
+- Train 
+  ``` cd keras_part;
+      python ./train.py --weight_path WEIGHT_FILE_PATH_TO_CONTINUE_TRAINING  --TFRecord_pattern TFRECORD_FILE_PATTERN
+   ```
+    For example:
+  ```
+      python ./train.py --weight_path ./keras_weight/weights_full.h5  --TFRecord_pattern ./tfrecords/train-?????-of-00256
+  ```
+- Test 
+  ``` cd keras_part;
+      python ./inference.py --weight_path WEIGHT_FILE_PATH  --image_path TEST_IMAGE_PATH --max_sentence_length 20
+  ```
+    For example:
+  ```
+      python ./inference.py --weight_path ./keras_weight/weights_full.h5  --image_path ./test.jpg --max_sentence_length 20
+  ```
+### Pretained Weight
+Pretained Keras weight file will be uploaded to google driver in short time.
+### Training dataset
+We use MS-COCO dataset, you can fetch raw data and build them into tfrecords according to the origin tensorflow [im2txt](https://github.com/tensorflow/models/tree/master/research/im2txt)
+
+
 ## TODO 
 - Train on the dataset to 100k epoches. (currently 40k)
-- Open source origin model based on Keras which is trained with.
+- ~~Open source origin model based on Keras which is trained with.~~
 - More language support (Chinese).
 
 ## Thanks for third party lib in demo
