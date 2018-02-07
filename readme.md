@@ -120,6 +120,11 @@ I trained the dataset with only one GTX Force 1080Ti for about 48 hours and curr
   ```
       python ./inference.py --weight_path ./keras_weight/weights_full.h5  --image_path ./test.jpg --max_sentence_length 20
   ```
+- Convert to CoreML Model 
+  ``` cd keras_part;
+      python ./convert_coreml.py --export_lstm False
+  ```
+  ```export_lstm ``` determine whether to export the inception part or lstm part model.(The whole model is split into 2 parts. One for image encoding, one for decoding words)
 ### Pretained Weight
 Pretained Keras weight file will be uploaded to google driver in short time.
 ### Training dataset
