@@ -99,7 +99,7 @@ So it is recommeneded to set `beamSize=1` on mobile devices due to less gpu/cpu 
 - Xcode 9.0+ (Swift 4.x)
 
 ## Original Model
-This coreml model is exported from keras which is trained with MSCOCO dataset for about 40k epoches. And presently it is not in the state of art yet. You may not use this in production.
+This coreml model is exported from keras which is trained with MSCOCO dataset for about 40k steps. And presently it is not in the state of art yet. You may not use this in production.
 I trained the dataset with only one GTX Force 1080Ti for about 48 hours and currently don't have more time to train on it.Hope for community to keep on it.
 
 
@@ -132,7 +132,7 @@ We use MS-COCO dataset, you can fetch raw data and build them into tfrecords acc
 
 
 ## TODO 
-- Train on the dataset to 100k epoches. (currently 40k)
+- Train on the dataset to 100k steps. (currently 40k)
 - ~~Open source origin model based on Keras which is trained with.~~
 - More language support (Chinese).
 
